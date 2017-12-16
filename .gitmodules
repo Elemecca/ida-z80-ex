@@ -1,0 +1,3 @@
+[submodule "external/cmake-ida"]
+	path = external/cmake-ida
+	url = git://github.com/Elemecca/cmake-ida.git

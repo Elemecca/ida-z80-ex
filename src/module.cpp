@@ -21,6 +21,7 @@
 #include <idp.hpp>
 
 #include "module.hpp"
+#include "assemblers.hpp"
 #include "registers.hpp"
 #include "instructions.hpp"
 
@@ -35,13 +36,14 @@ static ssize_t idaapi notify(void *, int event, va_list args) {
     }
 }
 
+
 static const char* const psnames[] = {
-    "z80",
+    "z80-ex",
     NULL
 };
 
 static const char* const plnames[] = {
-    "Zilog 80",
+    "Zilog Z80 (Improved)",
     NULL
 };
 
@@ -49,7 +51,8 @@ processor_t LPH = {
     IDP_INTERFACE_VERSION,          // version
     0x8000 + PLFM_Z80,              // id
     0                               // flag
-        | PRN_HEX,
+        | PRN_HEX
+        | PR_SEGTRANS,
     0,                              // flag2
 
     8,                              // cnbits
@@ -58,7 +61,7 @@ processor_t LPH = {
     psnames,                        // psnames
     plnames,                        // plnames
 
-    NULL,                           // assemblers
+    z80_assemblers,                 // assemblers
 
     notify,                         // _notify
 

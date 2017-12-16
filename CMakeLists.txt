@@ -12,6 +12,7 @@ find_package(IDA 7.0 MODULE REQUIRED)
 
 add_ida_module(z80-ex PROCESSOR SOURCES
     src/module.cpp
+    src/assemblers.cpp
     src/registers.cpp
     src/instructions.cpp
     src/analyze.cpp

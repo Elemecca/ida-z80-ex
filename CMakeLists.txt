@@ -16,4 +16,5 @@ add_ida_module(z80-ex PROCESSOR SOURCES
     src/registers.cpp
     src/instructions.cpp
     src/analyze.cpp
+    src/emulate.cpp
 )

@@ -27,4 +27,6 @@ idaman processor_t ida_module_data LPH;
 
 int z80_analyze(insn_t &out);
 
+int z80_emulate(const insn_t &insn);
+
 #endif

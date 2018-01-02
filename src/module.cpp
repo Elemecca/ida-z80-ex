@@ -31,6 +31,9 @@ static ssize_t idaapi notify(void *, int event, va_list args) {
     case processor_t::ev_ana_insn:
         return z80_analyze(*va_arg(args, insn_t*));
 
+    case processor_t::ev_emu_insn:
+        return z80_emulate(*va_arg(args, const insn_t*));
+
     default:
         return 0;
     }
